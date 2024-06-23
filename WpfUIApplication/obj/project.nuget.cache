@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "+MSSFisYCO0oxdN502tvURPc7w8KMhg6LEtzNRfilMXVu92/+eCVp4IkmIxckOqmKL4brNMh3qa/VyxzUZHzPQ==",
+  "success": true,
+  "projectFilePath": "D:\\Project\\WpfUIApplication\\WpfUIApplication\\WpfUIApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\A\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\A\\.nuget\\packages\\system.drawing.common\\8.0.6\\system.drawing.common.8.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}

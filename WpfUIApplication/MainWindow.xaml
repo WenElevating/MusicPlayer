@@ -1,0 +1,893 @@
+﻿<Window
+    x:Class="WpfUIApplication.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:con="clr-namespace:WpfUIApplication.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfUIApplication"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="1024"
+    Height="700"
+    AllowsTransparency="True"
+    Background="Transparent"
+    FontFamily="Microsoft Yahei"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <WindowChrome.WindowChrome>
+        <WindowChrome />
+    </WindowChrome.WindowChrome>
+    <Border CornerRadius="15">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="8*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Style="{StaticResource LeftListGrid}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*" />
+                        <RowDefinition Height="8*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.2*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Border
+                            Width="30"
+                            Height="30"
+                            Margin="5,0,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#FC3D4A"
+                            CornerRadius="15">
+                            <Image
+                                Width="25"
+                                Height="23"
+                                Source="{StaticResource MainMusic}" />
+                        </Border>
+                        <TextBlock
+                            Grid.Column="1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            Text="网 易 云 音 乐" />
+                        <Border
+                            Grid.Column="2"
+                            Width="25"
+                            Height="15"
+                            Margin="0,6,5,0"
+                            Padding="2"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            CornerRadius="2"
+                            Style="{StaticResource BetaStyle}">
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontSize="9"
+                                Text="Beta" />
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <ScrollViewer VerticalAlignment="Top">
+                            <StackPanel x:Name="LeftListStackButton">
+                                <RadioButton
+                                    HorizontalContentAlignment="Left"
+                                    GroupName="LeftListGroup"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="16"
+                                            Source="{StaticResource ForRecommend}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="为我推荐"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    HorizontalContentAlignment="Left"
+                                    GroupName="LeftListGroup"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource Featured}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="云音乐精选"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    HorizontalContentAlignment="Left"
+                                    GroupName="LeftListGroup"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource Podcast}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="播客"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    HorizontalContentAlignment="Left"
+                                    GroupName="LeftListGroup"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource PrivateTour}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="私人漫游"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    HorizontalContentAlignment="Left"
+                                    GroupName="LeftListGroup"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource Community}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="社区"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <Line />
+                                <Grid
+                                    x:Name="MyListGrid"
+                                    Width="145"
+                                    Height="30"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Center"
+                                    Background="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        FontWeight="Bold"
+                                        Foreground="#70767A"
+                                        Text="我的" />
+                                    <Button
+                                        x:Name="MyListEditButton"
+                                        Grid.Column="1"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Cursor="Hand"
+                                        Opacity="0"
+                                        Style="{StaticResource LeftListButton}">
+                                        <Image
+                                            Width="15"
+                                            Height="15"
+                                            Source="{StaticResource EditMyList}" />
+                                        <Button.Triggers>
+                                            <EventTrigger RoutedEvent="MouseEnter" SourceName="MyListEditButton">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="MyListEditButton"
+                                                            Storyboard.TargetProperty="Opacity"
+                                                            From="0.4"
+                                                            To="0.8"
+                                                            Duration="0:0:0.1" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="MouseLeave" SourceName="MyListEditButton">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="MyListEditButton"
+                                                            Storyboard.TargetProperty="Opacity"
+                                                            From="0.8"
+                                                            To="0.4"
+                                                            Duration="0:0:0.1" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter" SourceName="MyListGrid">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="MyListEditButton"
+                                                        Storyboard.TargetProperty="Opacity"
+                                                        From="0"
+                                                        To="0.4"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="MouseLeave" SourceName="MyListGrid">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="MyListEditButton"
+                                                        Storyboard.TargetProperty="Opacity"
+                                                        From="0.4"
+                                                        To="0"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                                <RadioButton
+                                    x:Name="MyLoveMusic"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="22"
+                                            Height="22"
+                                            Source="{StaticResource LoveMusic}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="我喜欢的音乐"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    x:Name="RecentPalyed"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource RecentlyPlayed}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="最近播放"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    x:Name="MyPodCast"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{StaticResource LeftListToggleButton}">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource MyPodcast}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="我的播客"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    x:Name="MyStar"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{StaticResource LeftListToggleButton}"
+                                    Visibility="Collapsed">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource MyCollection}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="我的收藏"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    x:Name="DownloadManage"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{StaticResource LeftListToggleButton}"
+                                    Visibility="Collapsed">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource DownloadManage}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="下载管理"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    x:Name="LocalMusic"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{StaticResource LeftListToggleButton}"
+                                    Visibility="Collapsed">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource LocalMusic}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="本地音乐"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <RadioButton
+                                    x:Name="CloudDisk"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{StaticResource LeftListToggleButton}"
+                                    Visibility="Collapsed">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="18"
+                                            Source="{StaticResource MusicCloudDisk}" />
+                                        <TextBlock
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            Text="我的音乐云盘"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                </RadioButton>
+                                <Button
+                                    x:Name="MoreButton"
+                                    Width="150"
+                                    Height="40"
+                                    HorizontalAlignment="Center"
+                                    HorizontalContentAlignment="Left"
+                                    VerticalContentAlignment="Center"
+                                    Click="MoreButton_Click"
+                                    Cursor="Hand"
+                                    Style="{StaticResource LeftListButtonNoTrigger}"
+                                    Tag="More">
+                                    <Grid Margin="5,0,0,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="28" />
+                                            <ColumnDefinition Width="1.5*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image
+                                            x:Name="MoreImg"
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="16"
+                                            Opacity="0.5"
+                                            Source="{StaticResource MoreOptionsLight}" />
+                                        <TextBlock
+                                            x:Name="MoreText"
+                                            Grid.Column="1"
+                                            Padding="7,0,0,0"
+                                            VerticalAlignment="Center"
+                                            FontSize="13"
+                                            FontWeight="Bold"
+                                            Foreground="#FFFFFF"
+                                            Opacity="0.5"
+                                            Text="更多"
+                                            TextWrapping="Wrap" />
+                                    </Grid>
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter" SourceName="MoreButton">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="MoreImg"
+                                                        Storyboard.TargetProperty="Opacity"
+                                                        From="0.5"
+                                                        To="1"
+                                                        Duration="0:0:0.1" />
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="MoreText"
+                                                        Storyboard.TargetProperty="Opacity"
+                                                        From="0.5"
+                                                        To="1"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="MouseLeave" SourceName="MoreButton">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="MoreImg"
+                                                        Storyboard.TargetProperty="Opacity"
+                                                        From="1"
+                                                        To="0.5"
+                                                        Duration="0:0:0.1" />
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="MoreText"
+                                                        Storyboard.TargetProperty="Opacity"
+                                                        From="1"
+                                                        To="0.5"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                                <Line />
+                                <Grid
+                                    x:Name="MySongMenuGrid"
+                                    Width="145"
+                                    Height="30"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Center"
+                                    Background="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            FontWeight="Bold"
+                                            Foreground="#70767A"
+                                            Text="创建的歌单" />
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="16"
+                                            Opacity="0.5"
+                                            Source="{StaticResource MoreOptionsLight}" />
+                                    </StackPanel>
+                                    <Button
+                                        x:Name="MyListSongButton"
+                                        Grid.Column="1"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Cursor="Hand"
+                                        Opacity="0.4"
+                                        Style="{StaticResource LeftListButton}">
+                                        <Image
+                                            Width="15"
+                                            Height="15"
+                                            Source="{StaticResource EditMyList}" />
+                                        <Button.Triggers>
+                                            <EventTrigger RoutedEvent="MouseEnter" SourceName="MyListSongButton">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="MyListSongButton"
+                                                            Storyboard.TargetProperty="Opacity"
+                                                            From="0.4"
+                                                            To="0.8"
+                                                            Duration="0:0:0.1" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="MouseLeave" SourceName="MyListSongButton">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="MyListSongButton"
+                                                            Storyboard.TargetProperty="Opacity"
+                                                            From="0.8"
+                                                            To="0.4"
+                                                            Duration="0:0:0.1" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                </Grid>
+                                <Line />
+                                <Grid
+                                    x:Name="MyStarMenuGrid"
+                                    Width="145"
+                                    Height="30"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Center"
+                                    Background="Transparent">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            FontWeight="Bold"
+                                            Foreground="#70767A"
+                                            Text="收藏的歌单" />
+                                        <Image
+                                            Grid.Column="0"
+                                            Width="18"
+                                            Height="16"
+                                            Opacity="0.5"
+                                            Source="{StaticResource MoreOptionsLight}" />
+                                    </StackPanel>
+                                    <Button
+                                        x:Name="MyListStarButton"
+                                        Grid.Column="1"
+                                        Margin="0,0,5,0"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Cursor="Hand"
+                                        Opacity="0.4"
+                                        Style="{StaticResource LeftListButton}">
+                                        <Image
+                                            Width="15"
+                                            Height="15"
+                                            Source="{StaticResource EditMyList}" />
+                                        <Button.Triggers>
+                                            <EventTrigger RoutedEvent="MouseEnter" SourceName="MyListStarButton">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="MyListStarButton"
+                                                            Storyboard.TargetProperty="Opacity"
+                                                            From="0.4"
+                                                            To="0.8"
+                                                            Duration="0:0:0.1" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="MouseLeave" SourceName="MyListStarButton">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation
+                                                            Storyboard.TargetName="MyListStarButton"
+                                                            Storyboard.TargetProperty="Opacity"
+                                                            From="0.8"
+                                                            To="0.4"
+                                                            Duration="0:0:0.1" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Button.Triggers>
+                                    </Button>
+                                </Grid>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="8*" />
+                    </Grid.RowDefinitions>
+
+                    <con:Carousel Grid.Row="1" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" Style="{StaticResource BottomGird}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.2*" />
+                    <ColumnDefinition Width="1.6*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Grid Margin="30,0,0,0">
+                    <Border
+                        Width="60"
+                        Height="60"
+                        Background="red"
+                        BorderBrush="#101010"
+                        BorderThickness="14"
+                        CornerRadius="40" />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer HorizontalScrollBarVisibility="Hidden">
+                        <TextBlock
+                            x:Name="CurrentMusicName"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding MusicName}"
+                            TextWrapping="Wrap">
+                            <TextBlock.RenderTransform>
+                                <TranslateTransform x:Name="CurrentTransform" />
+                            </TextBlock.RenderTransform>
+                            <TextBlock.Triggers>
+                                <EventTrigger RoutedEvent="Loaded" SourceName="CurrentMusicName">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                                                RepeatBehavior="Forever"
+                                                Storyboard.TargetName="CurrentTransform"
+                                                Storyboard.TargetProperty="X"
+                                                From="0"
+                                                To="-255"
+                                                Duration="0:0:3" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </TextBlock.Triggers>
+                        </TextBlock>
+                    </ScrollViewer>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <ToggleButton Style="{StaticResource BottomToggleButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="18"
+                                Height="18"
+                                Source="{StaticResource AddToMusicMenu}"
+                                ToolTip="收藏到歌单" />
+                        </ToggleButton>
+                        <ToggleButton Style="{StaticResource BottomToggleButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="18"
+                                Height="18"
+                                Source="{StaticResource Comment}"
+                                ToolTip="评论" />
+                        </ToggleButton>
+                        <ToggleButton Style="{StaticResource BottomToggleButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="18"
+                                Height="18"
+                                Source="{StaticResource Share}"
+                                ToolTip="分享" />
+                        </ToggleButton>
+                        <ToggleButton Style="{StaticResource BottomToggleButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="18"
+                                Height="18"
+                                Source="{StaticResource Download}"
+                                ToolTip="下载" />
+                        </ToggleButton>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="6*" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Orientation="Horizontal">
+                        <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="25"
+                                Height="25"
+                                Margin="0,0,25,0"
+                                Source="{StaticResource Like}"
+                                ToolTip="收藏到歌单" />
+                        </Button>
+                        <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="18"
+                                Height="18"
+                                Margin="0,0,25,0"
+                                Source="{StaticResource LastMusic}" />
+                        </Button>
+                        <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="30"
+                                Height="30"
+                                Margin="0,0,25,0"
+                                Source="{StaticResource PlayMusic}" />
+                        </Button>
+                        <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="21"
+                                Height="21"
+                                Margin="0,0,25,0"
+                                Source="{StaticResource NextMusic}" />
+                        </Button>
+                        <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                            <Image
+                                Grid.Column="0"
+                                Width="25"
+                                Height="25"
+                                Margin="0,0,25,0"
+                                Source="{StaticResource HeartBeat}" />
+                        </Button>
+                    </StackPanel>
+                    <StackPanel
+                        Grid.Row="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock Foreground="#FF8A8A8A" Text="00:00" />
+                        <Slider Margin="10,0,10,0" />
+                        <TextBlock Foreground="#FF8A8A8A" Text="05:12" />
+                    </StackPanel>
+                </Grid>
+                <StackPanel
+                    Grid.Column="3"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+                    <Grid>
+                        <Border
+                            x:Name="ImageQuaility"
+                            Height="20"
+                            Margin="0,0,15,0"
+                            Padding="3,3,3,1"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            BorderBrush="#ABABAF"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Cursor="Hand">
+                            <TextBlock
+                                FontSize="10"
+                                LineHeight="10"
+                                Text="极高"
+                                ToolTip="音质" />
+                        </Border>
+                        <Popup
+                            Width="200"
+                            IsOpen="False"
+                            Placement="Top"
+                            PlacementTarget="{Binding ElementName=ImageQuaility}"
+                            StaysOpen="True">
+                            <StackPanel Background="Green">
+                                <TextBlock
+                                    Background="red"
+                                    FontSize="14"
+                                    FontWeight="Bold"
+                                    Foreground="White"
+                                    Text="歌曲音质" />
+                            </StackPanel>
+                        </Popup>
+                    </Grid>
+                    <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                        <TextBlock
+                            Margin="0,0,15,0"
+                            FontSize="16"
+                            Text="词"
+                            ToolTip="桌面歌词" />
+                    </Button>
+                    <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                        <Image
+                            Width="25"
+                            Height="25"
+                            Margin="0,0,15,0"
+                            Source="{StaticResource Vip}"
+                            ToolTip="会员音效" />
+                    </Button>
+                    <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                        <Image
+                            Width="25"
+                            Height="25"
+                            Margin="0,0,15,0"
+                            Source="{StaticResource Together}"
+                            ToolTip="开始一起听" />
+                    </Button>
+                    <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                        <Image
+                            Width="25"
+                            Height="25"
+                            Margin="0,0,15,0"
+                            Source="{StaticResource VoiceVolume}"
+                            ToolTip="静音" />
+                    </Button>
+                    <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                        <Image
+                            Width="21"
+                            Height="21"
+                            Margin="0,0,25,0"
+                            Source="{StaticResource PlayList}"
+                            ToolTip="播放列表" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
