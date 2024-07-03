@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="11.jpg" />
+    <None Remove="12.jpg" />
+    <None Remove="13.jpg" />
     <None Remove="Resources\img\logo.jpg" />
     <None Remove="Resources\img\music.jpeg" />
   </ItemGroup>
@@ -18,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="11.jpg" />
+    <Resource Include="12.jpg" />
+    <Resource Include="13.jpg" />
     <Resource Include="Resources\img\logo.jpg" />
     <Resource Include="Resources\img\music.jpeg" />
   </ItemGroup>

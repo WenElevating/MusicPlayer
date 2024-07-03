@@ -24,7 +24,7 @@ namespace WpfUIApplication.Controls
 
         private void Initial()
         {
-            var commonWidth = 400;
+            var commonWidth = 350;
 
             for (int i = 1; i <= 9; ++i)
             {
@@ -58,6 +58,7 @@ namespace WpfUIApplication.Controls
                 {
                     Source = new BitmapImage(new Uri(img)),
                     Width = commonWidth,
+                    Style = (Style)FindResource("RadiusImage")
                 };
                 scrollPanel.Children.Add(tempImage);
             }

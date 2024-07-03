@@ -26,7 +26,7 @@
 
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="205" />
                     <ColumnDefinition Width="8*" />
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0" Style="{StaticResource LeftListGrid}">
@@ -657,11 +657,668 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="1*" />
                         <RowDefinition Height="8*" />
                     </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="1.5*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel
+                            Height="32"
+                            Margin="45,0,0,0"
+                            Orientation="Horizontal">
+                            <Button
+                                Width="25"
+                                BorderThickness="1"
+                                Style="{StaticResource TopMenuButton}">
+                                <Image Source="{StaticResource GoBack}" />
+                            </Button>
+                            <Border
+                                Width="240"
+                                Margin="15,0,0,0"
+                                Style="{StaticResource HasIconInputBorder}">
+                                <DockPanel>
+                                    <Button
+                                        Width="18"
+                                        Margin="18,0,0,0"
+                                        Style="{StaticResource BottomButton}">
+                                        <Image x:Name="SearchImage" Source="{StaticResource SearchSong}">
+                                            <Image.Style>
+                                                <Style TargetType="{x:Type Image}">
+                                                    <Setter Property="Opacity" Value="0.8" />
+                                                    <Setter Property="Cursor" Value="Hand" />
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Opacity" Value="1" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver" Value="False">
+                                                            <Setter Property="Opacity" Value="0.8" />
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                    </Button>
+                                    <TextBox Margin="15,0,0,0" Style="{StaticResource TopTextBox}" />
+                                </DockPanel>
+                            </Border>
+                            <Button
+                                Width="30"
+                                Margin="15,0,0,0"
+                                BorderThickness="1"
+                                Style="{StaticResource TopMenuButton}">
+                                <Image
+                                    Width="20"
+                                    Height="20"
+                                    Source="{StaticResource IdentifySong}" />
+                            </Button>
+                        </StackPanel>
+                        <StackPanel
+                            Grid.Column="1"
+                            Margin="0,0,20,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <!--  头像  -->
+                            <Border
+                                Width="30"
+                                Height="30"
+                                Margin="0,0,10,0"
+                                Background="Green"
+                                CornerRadius="20" />
 
-                    <con:Carousel Grid.Row="1" />
+                            <TextBlock
+                                Margin="0,0,5,0"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="凡人多忘事..." />
+
+                            <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="20"
+                                    Margin="0,0,10,0"
+                                    Source="{StaticResource MoreOptions}"
+                                    ToolTip="消息中心" />
+                            </Button>
+
+                            <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="20"
+                                    Margin="0,0,10,0"
+                                    Source="{StaticResource MessageCenter}"
+                                    ToolTip="消息中心" />
+                            </Button>
+
+                            <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="20"
+                                    Margin="0,0,10,0"
+                                    Source="{StaticResource Setting}"
+                                    ToolTip="设置" />
+                            </Button>
+
+                            <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="20"
+                                    Margin="0,0,10,0"
+                                    Source="{StaticResource SwtichSkin}"
+                                    ToolTip="换肤" />
+                            </Button>
+
+                            <Line
+                                Margin="0,0,15,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                X1="0"
+                                X2="1"
+                                Y1="0"
+                                Y2="25" />
+
+                            <Button Cursor="Hand" Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="20"
+                                    Margin="0,0,10,0"
+                                    Source="{StaticResource MiniMode}"
+                                    ToolTip="mini模式" />
+                            </Button>
+
+                            <Button
+                                Click="MinimizeWindow_Click"
+                                Cursor="Hand"
+                                Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="20"
+                                    Margin="0,0,10,4"
+                                    Source="{StaticResource MinimizeWindow}"
+                                    ToolTip="最小化" />
+                            </Button>
+
+                            <Button
+                                Click="SwitchWindowSize_Click"
+                                Cursor="Hand"
+                                Style="{StaticResource BottomButton}">
+                                <Image
+                                    x:Name="MaxWindowsImage"
+                                    Width="20"
+                                    Height="17"
+                                    Margin="0,3,10,7"
+                                    Source="{StaticResource MaximizeWindow}"
+                                    ToolTip="最大化" />
+                            </Button>
+
+                            <Button
+                                Click="CloseWindow_Click"
+                                Cursor="Hand"
+                                Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="22"
+                                    Margin="0,2,10,7"
+                                    Source="{StaticResource CloseWindow}"
+                                    ToolTip="关闭" />
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    <StackPanel Grid.Row="1">
+                        <StackPanel Orientation="Horizontal">
+                            <con:Carousel
+                                Height="120"
+                                Margin="50,0,30,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top" />
+
+                            <Border
+                                Width="350"
+                                Padding="15"
+                                Background="#2D2D38"
+                                CornerRadius="10">
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <DockPanel VerticalAlignment="Center">
+                                            <TextBlock
+                                                FontSize="17"
+                                                FontWeight="Bold"
+                                                Text="下午好," />
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                FontSize="14"
+                                                Text="  猜你喜欢听" />
+                                        </DockPanel>
+                                    </Grid>
+                                    <!--  添加推荐...  -->
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                        <Grid Margin="50,40,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                HorizontalAlignment="Left"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Text="精选推荐" />
+
+                            <Button
+                                Grid.Column="1"
+                                Margin="0,0,30,0"
+                                HorizontalAlignment="Right"
+                                Cursor="Hand"
+                                Style="{StaticResource BottomButton}">
+                                <Image
+                                    Width="20"
+                                    Margin="0,0,10,0"
+                                    Source="{StaticResource RefreshRecommend}"
+                                    ToolTip="刷新" />
+                            </Button>
+
+                            <StackPanel
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Margin="0,10,0,0"
+                                Orientation="Horizontal">
+                                <Grid Margin="0,0,20,0" HorizontalAlignment="Left">
+                                    <Image
+                                        Width="170"
+                                        Height="250"
+                                        Panel.ZIndex="0"
+                                        Source="/13.jpg" />
+                                    <TextBlock
+                                        Margin="10"
+                                        VerticalAlignment="Top"
+                                        Panel.ZIndex="100"
+                                        FontSize="20"
+                                        FontWeight="Bold"
+                                        Text="每日推荐" />
+                                    <Border
+                                        x:Name="DescriptionBorder"
+                                        Height="60"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Bottom">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Offset="0" Color="#715671" />
+                                                <GradientStop Offset="1" Color="#715671" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                            <StackPanel VerticalAlignment="Center">
+                                                <TextBlock
+                                                    Width="150"
+                                                    Margin="8"
+                                                    FontSize="15"
+                                                    LineHeight="23"
+                                                    Text="每日推荐 | 从「风恋歌」开始听起"
+                                                    TextWrapping="WrapWithOverflow" />
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Margin="10">
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="1 风恋歌" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="2 恋人心" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="3 喜帖街" />
+                                                    </StackPanel>
+
+                                                    <Button
+                                                        Grid.Column="1"
+                                                        Margin="0,0,10,0"
+                                                        HorizontalAlignment="Right"
+                                                        Cursor="Hand"
+                                                        Style="{StaticResource BottomButton}">
+                                                        <Image
+                                                            Width="40"
+                                                            Margin="0,0,10,0"
+                                                            Source="{StaticResource PlayMusic}"
+                                                            ToolTip="播放" />
+                                                    </Button>
+                                                </Grid>
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Border>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter" SourceName="DescriptionBorder">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="60"
+                                                        To="170"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="Transparent"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="MouseLeave" SourceName="DescriptionBorder">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="170"
+                                                        To="60"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="#715671"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                                <Grid Margin="0,0,20,0" HorizontalAlignment="Left">
+                                    <Image
+                                        Width="170"
+                                        Height="250"
+                                        Panel.ZIndex="0"
+                                        Source="/13.jpg" />
+                                    <TextBlock
+                                        Margin="10"
+                                        VerticalAlignment="Top"
+                                        Panel.ZIndex="100"
+                                        FontSize="20"
+                                        FontWeight="Bold"
+                                        Text="每日推荐" />
+                                    <Border
+                                        x:Name="DescriptionBorder2"
+                                        Height="60"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Bottom">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Offset="0" Color="#715671" />
+                                                <GradientStop Offset="1" Color="#715671" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                            <StackPanel VerticalAlignment="Center">
+                                                <TextBlock
+                                                    Width="150"
+                                                    Margin="8"
+                                                    FontSize="15"
+                                                    LineHeight="23"
+                                                    Text="每日推荐 | 从「风恋歌」开始听起"
+                                                    TextWrapping="WrapWithOverflow" />
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Margin="10">
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="1 风恋歌" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="2 恋人心" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="3 喜帖街" />
+                                                    </StackPanel>
+
+                                                    <Button
+                                                        Grid.Column="1"
+                                                        Margin="0,0,10,0"
+                                                        HorizontalAlignment="Right"
+                                                        Cursor="Hand"
+                                                        Style="{StaticResource BottomButton}">
+                                                        <Image
+                                                            Width="40"
+                                                            Margin="0,0,10,0"
+                                                            Source="{StaticResource PlayMusic}"
+                                                            ToolTip="播放" />
+                                                    </Button>
+                                                </Grid>
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Border>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter" SourceName="DescriptionBorder2">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder2"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="60"
+                                                        To="170"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder2"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="Transparent"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="MouseLeave" SourceName="DescriptionBorder2">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder2"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="170"
+                                                        To="60"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder2"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="#715671"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                                <Grid Margin="0,0,20,0" HorizontalAlignment="Left">
+                                    <Image
+                                        Width="170"
+                                        Height="250"
+                                        Panel.ZIndex="0"
+                                        Source="/13.jpg" />
+                                    <TextBlock
+                                        Margin="10"
+                                        VerticalAlignment="Top"
+                                        Panel.ZIndex="100"
+                                        FontSize="20"
+                                        FontWeight="Bold"
+                                        Text="每日推荐" />
+                                    <Border
+                                        x:Name="DescriptionBorder3"
+                                        Height="60"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Bottom">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Offset="0" Color="#715671" />
+                                                <GradientStop Offset="1" Color="#715671" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                            <StackPanel VerticalAlignment="Center">
+                                                <TextBlock
+                                                    Width="150"
+                                                    Margin="8"
+                                                    FontSize="15"
+                                                    LineHeight="23"
+                                                    Text="每日推荐 | 从「风恋歌」开始听起"
+                                                    TextWrapping="WrapWithOverflow" />
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Margin="10">
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="1 风恋歌" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="2 恋人心" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="3 喜帖街" />
+                                                    </StackPanel>
+
+                                                    <Button
+                                                        Grid.Column="1"
+                                                        Margin="0,0,10,0"
+                                                        HorizontalAlignment="Right"
+                                                        Cursor="Hand"
+                                                        Style="{StaticResource BottomButton}">
+                                                        <Image
+                                                            Width="40"
+                                                            Margin="0,0,10,0"
+                                                            Source="{StaticResource PlayMusic}"
+                                                            ToolTip="播放" />
+                                                    </Button>
+                                                </Grid>
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Border>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter" SourceName="DescriptionBorder3">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder3"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="60"
+                                                        To="170"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder3"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="Transparent"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="MouseLeave" SourceName="DescriptionBorder3">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder3"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="170"
+                                                        To="60"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder3"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="#715671"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                                <Grid Margin="0,0,20,0" HorizontalAlignment="Left">
+                                    <Image
+                                        Width="170"
+                                        Height="250"
+                                        Panel.ZIndex="0"
+                                        Source="/13.jpg" />
+                                    <TextBlock
+                                        Margin="10"
+                                        VerticalAlignment="Top"
+                                        Panel.ZIndex="100"
+                                        FontSize="20"
+                                        FontWeight="Bold"
+                                        Text="每日推荐" />
+                                    <Border
+                                        x:Name="DescriptionBorder4"
+                                        Height="60"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Bottom">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Offset="0" Color="#715671" />
+                                                <GradientStop Offset="1" Color="#715671" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                            <StackPanel VerticalAlignment="Center">
+                                                <TextBlock
+                                                    Width="150"
+                                                    Margin="8"
+                                                    FontSize="15"
+                                                    LineHeight="23"
+                                                    Text="每日推荐 | 从「风恋歌」开始听起"
+                                                    TextWrapping="WrapWithOverflow" />
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <StackPanel Margin="10">
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="1 风恋歌" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="2 恋人心" />
+                                                        <TextBlock
+                                                            Margin="0,0,0,10"
+                                                            FontSize="13"
+                                                            Text="3 喜帖街" />
+                                                    </StackPanel>
+
+                                                    <Button
+                                                        Grid.Column="1"
+                                                        Margin="0,0,10,0"
+                                                        HorizontalAlignment="Right"
+                                                        Cursor="Hand"
+                                                        Style="{StaticResource BottomButton}">
+                                                        <Image
+                                                            Width="40"
+                                                            Margin="0,0,10,0"
+                                                            Source="{StaticResource PlayMusic}"
+                                                            ToolTip="播放" />
+                                                    </Button>
+                                                </Grid>
+                                            </StackPanel>
+                                        </ScrollViewer>
+                                    </Border>
+                                    <Grid.Triggers>
+                                        <EventTrigger RoutedEvent="MouseEnter" SourceName="DescriptionBorder4">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder4"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="60"
+                                                        To="170"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder4"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="Transparent"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                        <EventTrigger RoutedEvent="MouseLeave" SourceName="DescriptionBorder4">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <DoubleAnimation
+                                                        Storyboard.TargetName="DescriptionBorder4"
+                                                        Storyboard.TargetProperty="Height"
+                                                        From="170"
+                                                        To="60"
+                                                        Duration="0:0:0.1" />
+                                                    <ColorAnimation
+                                                        Storyboard.TargetName="DescriptionBorder4"
+                                                        Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[0].(GradientStop.Color)"
+                                                        To="#715671"
+                                                        Duration="0:0:0.1" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </Grid.Triggers>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+
+                    </StackPanel>
                 </Grid>
             </Grid>
             <Grid Grid.Row="1" Style="{StaticResource BottomGird}">

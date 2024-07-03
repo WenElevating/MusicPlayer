@@ -50,3 +50,4 @@ D:\Project\WpfUIApplication\WpfUIApplication\bin\Debug\net8.0-windows\System.Dra
 D:\Project\WpfUIApplication\WpfUIApplication\obj\Debug\net8.0-windows\WpfUIApplication.csproj.AssemblyReference.cache
 D:\Project\WpfUIApplication\WpfUIApplication\obj\Debug\net8.0-windows\WpfUIApp.DC84921F.Up2Date
 D:\Project\WpfUIApplication\WpfUIApplication\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Project\WpfUIApplication\WpfUIApplication\obj\Debug\net8.0-windows\WpfUIApplication.sourcelink.json

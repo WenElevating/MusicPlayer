@@ -23,6 +23,12 @@ namespace WpfUIApplication
             InitializeComponent();
             MainViewModel mainViewModel = new MainViewModel();
             DataContext = mainViewModel;
+            Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
         /// <summary>
@@ -74,6 +80,34 @@ namespace WpfUIApplication
                 CloudDisk.Visibility = Visibility.Collapsed;
                 btn.Tag = "More";
             }
+        }
+
+        private void MinimizeWindow_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void SwitchWindowSize_Click(object sender, RoutedEventArgs e)
+        {
+            var btn = sender as Button;
+            Image image = (Image)btn.FindName("MaxWindowsImage");
+            if (WindowState == WindowState.Normal)
+            {
+                btn.ToolTip = "最大化";
+                image.Source = (ImageSource)FindResource("MaximizeWindow");
+                WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                btn.ToolTip = "向下还原";
+                image.Source = (ImageSource)FindResource("DownMinimizeWindow");
+                WindowState = WindowState.Normal;
+            }
+        }
+
+        private void CloseWindow_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
